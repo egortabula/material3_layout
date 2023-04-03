@@ -6,7 +6,7 @@ class NavigationDrawerSettingsModel extends NavigationSettings<Widget> {
   NavigationDrawerSettingsModel({
     required super.pages,
     required super.destinations,
-    super.type = NavigationTypeEnum.drawer,
+    super.type = NavigationTypeEnum.modalDrawer,
   }) : assert(
           (destinations).whereType<NavigationDrawerDestination>().length ==
               pages.length,
