@@ -30,12 +30,4 @@ class DestinationModel {
       tooltip: tooltip,
     );
   }
-
-  NavigationDrawerDestination toNavigationDrawerDestination() {
-    return NavigationDrawerDestination(
-      icon: icon,
-      label: Text(label),
-      selectedIcon: selectedIcon,
-    );
-  }
 }

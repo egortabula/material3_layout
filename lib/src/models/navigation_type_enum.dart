@@ -1,0 +1,4 @@
+enum NavigationTypeEnum {
+  railAndBottomNavBar,
+  drawer;
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/breakpoints.dart';
+import 'package:material3_layout/src/models/navigation_settings.dart';
 import 'package:material3_layout/src/navigation_scaffold/components/bottom_nav_bar.dart';
 import 'package:material3_layout/src/navigation_scaffold/components/nav_rail.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
@@ -10,29 +11,20 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   final void Function(int)? onDestinationSelected;
   final ThemeData theme;
   final AppBar? appBar;
-  final List<Widget> pages;
-  final NavigationRailSettingsModel navigationRailSettings;
-  final List<DestinationModel> destinations;
 
-  /// if not null, rail and bottom nav bar will be null
-  final NavigationDrawerSettingsModel? customDrawer;
-  const NavigationScaffold({
+  final NavigationTypeEnum navigationType;
+  final NavigationSettings navigationSettings;
+
+  NavigationScaffold({
     super.key,
     this.onDestinationSelected,
+    this.navigationType = NavigationTypeEnum.railAndBottomNavBar,
+    required this.navigationSettings,
     required this.theme,
     this.appBar,
-    required this.pages,
-    required this.navigationRailSettings,
-    required this.destinations,
-    this.customDrawer,
-  })  : assert(
-          customDrawer != null || destinations.length == pages.length,
-          'The lengths of destinations and pages must be equal',
-        ),
-        assert(
-          customDrawer != null ||
-              (destinations.length >= 2 && destinations.length <= 7),
-          'The lengths of destination must be from 2 to 7',
+  }) : assert(
+          navigationSettings.type == navigationType,
+          'Wrong navigationType. NavigationType must be the same as in navigationSettings',
         );
 
   @override
@@ -48,7 +40,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
           _buildNavigationRail(layout),
           Flexible(
             child: Obx(
-              () => pages[controller.selectedIndex],
+              () => navigationSettings.pages[controller.selectedIndex],
             ),
           ),
         ],
@@ -59,40 +51,44 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   }
 
   Widget _buildNavigationRail(Layout layout) {
-    if (layout == Layout.compact || customDrawer != null) {
+    if (layout == Layout.compact ||
+        navigationType == NavigationTypeEnum.drawer) {
       return const SizedBox.shrink();
     }
     return NavRail(
-      destinations: destinations,
-      settings: navigationRailSettings,
+      settings: navigationSettings as NavigationRailSettingsModel,
       onDestinationSelected: onDestinationSelected,
     );
   }
 
   BottomNavBar? _buildBottomNavigationBar(Layout layout) {
-    if (layout != Layout.compact || customDrawer != null) {
+    if (layout != Layout.compact ||
+        navigationType == NavigationTypeEnum.drawer) {
       return null;
     }
     return BottomNavBar(
-      destinations: destinations,
+      settings: navigationSettings as NavigationRailSettingsModel,
       onDestinationSelected: onDestinationSelected,
     );
   }
 
   Widget? _buildNavDrawer() {
-    if (customDrawer == null) {
+    if (navigationType != NavigationTypeEnum.drawer) {
       return null;
     }
     return CustomNavigationDrawer(
-      settings: customDrawer!,
+      settings: navigationSettings as NavigationDrawerSettingsModel,
       onDestinationSelected: onDestinationSelected,
     );
   }
 
   AppBar? _buildAppBar() {
-    if (appBar != null) {
-      return appBar;
+    if (navigationType == NavigationTypeEnum.drawer && appBar == null) {
+      return AppBar();
     }
-    return AppBar();
+    if (appBar == null) {
+      return null;
+    }
+    return appBar;
   }
 }

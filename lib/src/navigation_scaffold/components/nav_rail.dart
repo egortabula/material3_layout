@@ -6,14 +6,10 @@ import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_con
 import 'theme_switcher_button.dart';
 
 class NavRail extends GetView<NavigationScaffoldController> {
-  final List<DestinationModel> destinations;
-
   final NavigationRailSettingsModel settings;
   final void Function(int)? onDestinationSelected;
   const NavRail({
     Key? key,
-    required this.destinations,
-  
     required this.settings,
     required this.onDestinationSelected,
   }) : super(key: key);
@@ -25,7 +21,8 @@ class NavRail extends GetView<NavigationScaffoldController> {
         children: [
           NavigationRail(
             useIndicator: true,
-            backgroundColor: controller.theme.navigationRailTheme.backgroundColor,
+            backgroundColor:
+                controller.theme.navigationRailTheme.backgroundColor,
             groupAlignment: settings.groupAlignment,
             labelType: settings.labelType,
             leading: _buildLeading(state),
@@ -46,7 +43,7 @@ class NavRail extends GetView<NavigationScaffoldController> {
             right: 0,
             child: Visibility(
               visible: settings.addThemeSwitcherTrailingIcon,
-              child: ThemeSwitcherButton(),
+              child: const ThemeSwitcherButton(),
             ),
           ),
         ],
@@ -68,20 +65,20 @@ class NavRail extends GetView<NavigationScaffoldController> {
     }
   }
 
-
-
   List<NavigationRailDestination> get railDestinations {
-    return List.generate(destinations.length, (index) {
+    return List.generate(settings.destinations.length, (index) {
       if (index == 0 && settings.groupAlignment == -1) {
-        return destinations[index]
+        return (settings.destinations[index])
             .toNavigationRailDestination(const EdgeInsets.only(top: 28));
-      } else if (index == destinations.length - 1 &&
+      } else if (index == settings.destinations.length - 1 &&
           settings.groupAlignment == 1.0) {
-        return destinations[index].toNavigationRailDestination(
+        return (settings.destinations[index])
+            .toNavigationRailDestination(
           const EdgeInsets.only(bottom: 56),
         );
       } else {
-        return destinations[index].toNavigationRailDestination(null);
+        return (settings.destinations[index])
+            .toNavigationRailDestination(null);
       }
     });
   }

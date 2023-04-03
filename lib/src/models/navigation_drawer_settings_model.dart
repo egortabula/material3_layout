@@ -1,9 +1,15 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:material3_layout/material3_layout.dart';
+import 'package:material3_layout/src/models/navigation_settings.dart';
 
-class NavigationDrawerSettingsModel {
-  final List<Widget> destinations;
-
+class NavigationDrawerSettingsModel extends NavigationSettings<Widget> {
   NavigationDrawerSettingsModel({
-    required this.destinations,
-  });
+    required super.pages,
+    required super.destinations,
+    super.type = NavigationTypeEnum.drawer,
+  }) : assert(
+          (destinations).whereType<NavigationDrawerDestination>().length ==
+              pages.length,
+          'Destinations must be the same length as pages',
+        );
 }

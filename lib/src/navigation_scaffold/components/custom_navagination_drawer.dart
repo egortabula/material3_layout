@@ -5,9 +5,8 @@ import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
 class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
-  
   final NavigationDrawerSettingsModel settings;
-    final void Function(int)? onDestinationSelected;
+  final void Function(int)? onDestinationSelected;
 
   const CustomNavigationDrawer({
     Key? key,
@@ -27,8 +26,7 @@ class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
           controller.selectedIndex = index;
           Get.back();
         },
-        children:
-            settings.destinations,
+        children: settings.destinations,
       );
     });
   }
@@ -87,12 +85,12 @@ class _NavigationDrawerDivider extends GetView<NavigationScaffoldController> {
 
   @override
   Widget build(BuildContext context) {
-    return  Divider(
-     indent: 28,
-     endIndent: 28,
-     height: 1,
-     thickness: 1,
-     color: controller.theme.colorScheme.outlineVariant,
+    return Divider(
+      indent: 28,
+      endIndent: 28,
+      height: 1,
+      thickness: 1,
+      color: controller.theme.colorScheme.outlineVariant,
     );
   }
 }

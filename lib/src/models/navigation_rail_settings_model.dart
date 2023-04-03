@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:material3_layout/material3_layout.dart';
+import 'package:material3_layout/src/models/navigation_settings.dart';
 
-class NavigationRailSettingsModel {
+class NavigationRailSettingsModel extends NavigationSettings<DestinationModel> {
   final Widget? leading;
   final Widget? trailing;
 
@@ -20,7 +22,14 @@ class NavigationRailSettingsModel {
     this.groupAlignment = 0.0,
     this.addThemeSwitcherTrailingIcon = false,
     this.labelType,
+    required super.destinations,
+    required super.pages,
+    super.type = NavigationTypeEnum.railAndBottomNavBar,
   })  : assert(
+          destinations.length == pages.length,
+          'Destinations must be the same length as pages',
+        ),
+        assert(
           showMenuIcon == false || leading == null,
           'Cannot provide both showMenuIcon and leading properties.',
         ),
