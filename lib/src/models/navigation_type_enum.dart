@@ -1,5 +1,6 @@
 enum NavigationTypeEnum {
   railAndBottomNavBar,
-  modalDrawer;
+  modalDrawer,
+  drawer;
   
 }

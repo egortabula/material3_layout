@@ -34,7 +34,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
-      appBar: _buildAppBar(),
+      appBar: _buildAppBar(layout),
       body: Row(
         children: [
           _buildPrimaryNavigation(layout),
@@ -51,11 +51,19 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   }
 
   Widget _buildPrimaryNavigation(Layout layout) {
-    if (layout == Layout.compact ||
-        navigationType == NavigationTypeEnum.modalDrawer) {
+    if (layout == Layout.compact) {
       return const SizedBox.shrink();
     }
-   
+    if (navigationType == NavigationTypeEnum.modalDrawer) {
+      return const SizedBox.shrink();
+    }
+    if (navigationType == NavigationTypeEnum.drawer) {
+      return CustomNavigationDrawer(
+        settings: navigationSettings as NavigationDrawerSettingsModel,
+        onDestinationSelected: onDestinationSelected,
+      );
+    }
+
     return NavRail(
       settings: navigationSettings as NavigationRailSettingsModel,
       onDestinationSelected: onDestinationSelected,
@@ -64,7 +72,8 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
   BottomNavBar? _buildBottomNavigationBar(Layout layout) {
     if (layout != Layout.compact ||
-        navigationType == NavigationTypeEnum.modalDrawer) {
+        navigationType == NavigationTypeEnum.modalDrawer ||
+        navigationType == NavigationTypeEnum.drawer) {
       return null;
     }
     return BottomNavBar(
@@ -74,22 +83,28 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   }
 
   Widget? _buildModalDrawer() {
-    if (navigationType != NavigationTypeEnum.modalDrawer) {
+    if (navigationType == NavigationTypeEnum.railAndBottomNavBar) {
       return null;
     }
+
     return CustomNavigationDrawer(
       settings: navigationSettings as NavigationDrawerSettingsModel,
       onDestinationSelected: onDestinationSelected,
     );
   }
 
-  AppBar? _buildAppBar() {
-    if (navigationType == NavigationTypeEnum.modalDrawer && appBar == null) {
+  AppBar? _buildAppBar(Layout layout) {
+    if (appBar != null) {
+      return appBar;
+    }
+    if (navigationType == NavigationTypeEnum.modalDrawer) {
       return AppBar();
     }
-    if (appBar == null) {
-      return null;
+    if (navigationType == NavigationTypeEnum.drawer &&
+        layout == Layout.compact) {
+      return AppBar();
     }
-    return appBar;
+
+    return null;
   }
 }
