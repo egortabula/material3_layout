@@ -37,7 +37,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
       appBar: _buildAppBar(),
       body: Row(
         children: [
-          _buildNavigationRail(layout),
+          _buildPrimaryNavigation(layout),
           Flexible(
             child: Obx(
               () => navigationSettings.pages[controller.selectedIndex],
@@ -46,15 +46,16 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
         ],
       ),
       bottomNavigationBar: _buildBottomNavigationBar(layout),
-      drawer: _buildNavDrawer(),
+      drawer: _buildModalDrawer(),
     );
   }
 
-  Widget _buildNavigationRail(Layout layout) {
+  Widget _buildPrimaryNavigation(Layout layout) {
     if (layout == Layout.compact ||
-        navigationType == NavigationTypeEnum.drawer) {
+        navigationType == NavigationTypeEnum.modalDrawer) {
       return const SizedBox.shrink();
     }
+   
     return NavRail(
       settings: navigationSettings as NavigationRailSettingsModel,
       onDestinationSelected: onDestinationSelected,
@@ -63,7 +64,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
   BottomNavBar? _buildBottomNavigationBar(Layout layout) {
     if (layout != Layout.compact ||
-        navigationType == NavigationTypeEnum.drawer) {
+        navigationType == NavigationTypeEnum.modalDrawer) {
       return null;
     }
     return BottomNavBar(
@@ -72,8 +73,8 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     );
   }
 
-  Widget? _buildNavDrawer() {
-    if (navigationType != NavigationTypeEnum.drawer) {
+  Widget? _buildModalDrawer() {
+    if (navigationType != NavigationTypeEnum.modalDrawer) {
       return null;
     }
     return CustomNavigationDrawer(
@@ -83,7 +84,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   }
 
   AppBar? _buildAppBar() {
-    if (navigationType == NavigationTypeEnum.drawer && appBar == null) {
+    if (navigationType == NavigationTypeEnum.modalDrawer && appBar == null) {
       return AppBar();
     }
     if (appBar == null) {
