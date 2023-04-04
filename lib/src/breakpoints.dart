@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Breakpoints {
-  static Layout getLayout(BuildContext context) {
+  static LayoutEnum getLayout(BuildContext context) {
     if (isCompact(context)) {
-      return Layout.compact;
+      return LayoutEnum.compact;
     } else if (isMedium(context)) {
-      return Layout.medium;
+      return LayoutEnum.medium;
     } else if (isExtended(context)) {
-      return Layout.expanded;
+      return LayoutEnum.expanded;
     } else {
       throw Exception('Bad condition!');
     }
@@ -27,10 +27,10 @@ class Breakpoints {
   }
 }
 
-enum Layout {
+enum LayoutEnum {
   compact(0, 600),
   medium(600, 840),
   expanded(840, double.infinity);
 
-  const Layout(double? begin, double? end);
+  const LayoutEnum(double? begin, double? end);
 }

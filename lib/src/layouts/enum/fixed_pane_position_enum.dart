@@ -1,0 +1,4 @@
+enum FixedPanePositionEnum {
+  left,
+  right,
+}

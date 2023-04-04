@@ -18,6 +18,8 @@ class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
   Widget build(BuildContext context) {
     return Obx(() {
       return NavigationDrawer(
+  
+     
         selectedIndex: controller.selectedIndex,
         onDestinationSelected: (int index) {
           if (onDestinationSelected != null) {

@@ -29,11 +29,12 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(NavigationScaffoldController(theme));
+    Get.put(NavigationScaffoldController(theme.obs));
     var layout = Breakpoints.getLayout(context);
 
     return Scaffold(
-      backgroundColor: theme.scaffoldBackgroundColor,
+      backgroundColor: theme.colorScheme.surface,
+      drawerScrimColor: theme.colorScheme.scrim.withOpacity(0.3),
       appBar: _buildAppBar(layout),
       body: Row(
         children: [
@@ -50,8 +51,8 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     );
   }
 
-  Widget _buildPrimaryNavigation(Layout layout) {
-    if (layout == Layout.compact) {
+  Widget _buildPrimaryNavigation(LayoutEnum layout) {
+    if (layout == LayoutEnum.compact) {
       return const SizedBox.shrink();
     }
     if (navigationType == NavigationTypeEnum.modalDrawer) {
@@ -70,8 +71,8 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     );
   }
 
-  BottomNavBar? _buildBottomNavigationBar(Layout layout) {
-    if (layout != Layout.compact ||
+  BottomNavBar? _buildBottomNavigationBar(LayoutEnum layout) {
+    if (layout != LayoutEnum.compact ||
         navigationType == NavigationTypeEnum.modalDrawer ||
         navigationType == NavigationTypeEnum.drawer) {
       return null;
@@ -93,16 +94,20 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     );
   }
 
-  AppBar? _buildAppBar(Layout layout) {
+  AppBar? _buildAppBar(LayoutEnum layout) {
     if (appBar != null) {
       return appBar;
     }
     if (navigationType == NavigationTypeEnum.modalDrawer) {
-      return AppBar();
+      return AppBar(
+        elevation: 2,
+      );
     }
     if (navigationType == NavigationTypeEnum.drawer &&
-        layout == Layout.compact) {
-      return AppBar();
+        layout == LayoutEnum.compact) {
+      return AppBar(
+        elevation: 2,
+      );
     }
 
     return null;

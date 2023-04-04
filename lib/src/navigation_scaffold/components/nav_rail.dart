@@ -20,9 +20,12 @@ class NavRail extends GetView<NavigationScaffoldController> {
       (state) => Stack(
         children: [
           NavigationRail(
-            useIndicator: true,
-            backgroundColor:
-                controller.theme.navigationRailTheme.backgroundColor,
+            backgroundColor: ElevationOverlay.applySurfaceTint(
+              controller.theme.value.colorScheme.surface,
+              controller.theme.value.colorScheme.surfaceTint,
+              2,
+            ),
+            
             groupAlignment: settings.groupAlignment,
             labelType: settings.labelType,
             leading: _buildLeading(state),
@@ -72,13 +75,11 @@ class NavRail extends GetView<NavigationScaffoldController> {
             .toNavigationRailDestination(const EdgeInsets.only(top: 28));
       } else if (index == settings.destinations.length - 1 &&
           settings.groupAlignment == 1.0) {
-        return (settings.destinations[index])
-            .toNavigationRailDestination(
+        return (settings.destinations[index]).toNavigationRailDestination(
           const EdgeInsets.only(bottom: 56),
         );
       } else {
-        return (settings.destinations[index])
-            .toNavigationRailDestination(null);
+        return (settings.destinations[index]).toNavigationRailDestination(null);
       }
     });
   }
