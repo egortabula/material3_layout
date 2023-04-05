@@ -5,17 +5,17 @@ import 'package:material3_layout/src/layouts/layout_utils.dart';
 
 /// A split-pane layout with two child widgets: one on the left and one on the right.
 /// The child widgets are separated by a `SizedBox` with a width equal to `paneSpacing`.
-class SplitPaneLayout extends Layout with LayoutUtils {
+class SplitPaneLayout extends StatelessWidget with LayoutUtils, Layout {
   final Widget leftChild;
   final Widget rightChild;
   final double verticalPadding;
 
-  const SplitPaneLayout({
-    Key? key,
+  SplitPaneLayout({
+    super.key,
     required this.leftChild,
     required this.rightChild,
     this.verticalPadding = 0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

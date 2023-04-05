@@ -11,7 +11,7 @@ import 'package:material3_layout/src/layouts/layout_utils.dart';
 /// pane takes up the remaining available space.
 ///
 /// The [fixedPaneChild] and [flexiblePaneChild] widgets are required to be non-null.
-class TwoPaneLayout extends Layout with LayoutUtils {
+class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
   final Widget fixedPaneChild;
   final Widget flexiblePaneChild;
 
@@ -22,12 +22,12 @@ class TwoPaneLayout extends Layout with LayoutUtils {
   final double verticalPadding;
 
   const TwoPaneLayout({
-    Key? key,
+    super.key,
     required this.fixedPaneChild,
     required this.flexiblePaneChild,
     this.fixedPanelPosition = FixedPanePositionEnum.left,
     this.verticalPadding = 0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

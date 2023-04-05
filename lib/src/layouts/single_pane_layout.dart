@@ -5,18 +5,18 @@ import 'package:material3_layout/src/layouts/layout.dart';
 import 'package:material3_layout/src/layouts/layout_utils.dart';
 
 /// A layout that displays a single pane on the screen.
-class SinglePaneLayout extends Layout with LayoutUtils {
+class SinglePaneLayout extends StatelessWidget with LayoutUtils, Layout {
   /// The child widget to display within this layout.
   final Widget child;
 
   /// The amount of vertical padding to apply to the layout.
   final double verticalPadding;
 
-  const SinglePaneLayout(
-    this.child, {
-    Key? key,
+  SinglePaneLayout({
+    super.key,
     this.verticalPadding = 0,
-  }) : super(key: key);
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
