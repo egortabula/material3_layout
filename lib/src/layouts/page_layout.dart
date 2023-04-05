@@ -36,15 +36,15 @@ class PageLayout extends StatelessWidget {
     }
     if (layout == LayoutEnum.medium) {
       if (GetUtils.isNull(mediumLayout)) {
-        return compactLayout.build(context);
+        return compactLayout;
       }
-      return mediumLayout!.build(context);
+      return mediumLayout!;
     }
     if (layout == LayoutEnum.expanded) {
       if (GetUtils.isNull(extendedLayout)) {
-        return mediumLayout?.build(context) ?? const SizedBox.shrink();
+        return mediumLayout ?? const SizedBox.shrink();
       }
-      return extendedLayout!.build(context);
+      return extendedLayout!;
     }
     throw Exception("Undefined breakpoint");
   }
