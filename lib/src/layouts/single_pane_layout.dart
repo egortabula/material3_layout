@@ -4,9 +4,14 @@ import 'package:material3_layout/src/breakpoints.dart';
 import 'package:material3_layout/src/layouts/layout.dart';
 import 'package:material3_layout/src/layouts/layout_utils.dart';
 
+/// A layout that displays a single pane on the screen.
 class SinglePaneLayout extends Layout with LayoutUtils {
+  /// The child widget to display within this layout.
   final Widget child;
+
+  /// The amount of vertical padding to apply to the layout.
   final double verticalPadding;
+
   const SinglePaneLayout(
     this.child, {
     Key? key,
@@ -25,15 +30,16 @@ class SinglePaneLayout extends Layout with LayoutUtils {
       );
     }
     return Material(
-        color: Get.theme.colorScheme.surface,
-        surfaceTintColor: Get.theme.colorScheme.surfaceTint,
-        shadowColor: Colors.transparent,
-        elevation: 2,
-        child: Container(
-          margin: layoutSpacing(verticalPadding),
-          width: double.infinity,
-          height: double.infinity,
-          child: child,
-        ));
+      color: Get.theme.colorScheme.surface,
+      surfaceTintColor: Get.theme.colorScheme.surfaceTint,
+      shadowColor: Colors.transparent,
+      elevation: 2,
+      child: Container(
+        margin: layoutSpacing(verticalPadding),
+        width: double.infinity,
+        height: double.infinity,
+        child: child,
+      ),
+    );
   }
 }

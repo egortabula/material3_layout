@@ -4,8 +4,13 @@ import 'package:get/route_manager.dart';
 import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
+
+/// A custom navigation drawer for the Material3 layout.
 class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
+  /// The primary navigation settings for the modal drawer.
   final NavigationDrawerSettingsModel settings;
+
+  /// A callback function that is called when a destination is selected.
   final void Function(int)? onDestinationSelected;
 
   const CustomNavigationDrawer({
@@ -18,8 +23,6 @@ class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
   Widget build(BuildContext context) {
     return Obx(() {
       return NavigationDrawer(
-  
-     
         selectedIndex: controller.selectedIndex,
         onDestinationSelected: (int index) {
           if (onDestinationSelected != null) {
@@ -33,19 +36,23 @@ class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
     });
   }
 
+  /// Returns a widget for the drawer title.
   static Widget drawerTitle(String title) {
     return _NavigationDrawerTitle(title);
   }
 
+  /// Returns a widget for a section header.
   static Widget sectionHeader(String title) {
     return _NavigationDraweHeader(title);
   }
 
+  /// Returns a widget for a section divider.
   static Widget sectionDivider() {
     return const _NavigationDrawerDivider();
   }
 }
 
+/// Widget for the navigation drawer title.
 class _NavigationDrawerTitle extends GetView<NavigationScaffoldController> {
   final String title;
   const _NavigationDrawerTitle(this.title);
@@ -64,6 +71,7 @@ class _NavigationDrawerTitle extends GetView<NavigationScaffoldController> {
   }
 }
 
+/// Widget for a section header in the navigation drawer.
 class _NavigationDraweHeader extends GetView<NavigationScaffoldController> {
   final String label;
   const _NavigationDraweHeader(this.label);
@@ -82,6 +90,7 @@ class _NavigationDraweHeader extends GetView<NavigationScaffoldController> {
   }
 }
 
+/// Widget for a section divider in the navigation drawer.
 class _NavigationDrawerDivider extends GetView<NavigationScaffoldController> {
   const _NavigationDrawerDivider();
 

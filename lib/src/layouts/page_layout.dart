@@ -4,10 +4,17 @@ import 'package:material3_layout/src/breakpoints.dart';
 
 import 'layout.dart';
 
+/// A widget that displays a different layout based on the screen size.
 class PageLayout extends StatelessWidget {
+  /// The layout to use when the screen size is compact.
   final Layout compactLayout;
+
+  /// The layout to use when the screen size is medium.
   final Layout? mediumLayout;
+
+  /// The layout to use when the screen size is extended.
   final Layout? extendedLayout;
+
   const PageLayout({
     Key? key,
     required this.compactLayout,
@@ -34,6 +41,6 @@ class PageLayout extends StatelessWidget {
       }
       return extendedLayout!.build(context);
     }
-    throw Exception("Undifuned breakpoint");
+    throw Exception("Undefined breakpoint");
   }
 }
