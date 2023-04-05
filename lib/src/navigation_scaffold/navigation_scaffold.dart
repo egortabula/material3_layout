@@ -69,7 +69,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     }
 
     return NavRail(
-      settings: navigationSettings as NavigationRailSettingsModel,
+      settings: navigationSettings as PrimaryNavigationSettingsModel,
       onDestinationSelected: onDestinationSelected,
     );
   }
@@ -81,7 +81,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
       return null;
     }
     return BottomNavBar(
-      settings: navigationSettings as NavigationRailSettingsModel,
+      settings: navigationSettings as PrimaryNavigationSettingsModel,
       onDestinationSelected: onDestinationSelected,
     );
   }

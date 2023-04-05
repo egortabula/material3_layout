@@ -4,7 +4,7 @@ import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
 class BottomNavBar extends GetView<NavigationScaffoldController> {
-  final NavigationRailSettingsModel settings;
+  final PrimaryNavigationSettingsModel settings;
   final void Function(int)? onDestinationSelected;
 
   const BottomNavBar({

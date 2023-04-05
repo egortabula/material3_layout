@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/models/navigation_settings.dart';
 
-class NavigationRailSettingsModel extends NavigationSettings<DestinationModel> {
+class PrimaryNavigationSettingsModel extends NavigationSettings<DestinationModel> {
   final Widget? leading;
   final Widget? trailing;
 
@@ -15,7 +15,7 @@ class NavigationRailSettingsModel extends NavigationSettings<DestinationModel> {
 
   final bool addThemeSwitcherTrailingIcon;
 
-  NavigationRailSettingsModel({
+  PrimaryNavigationSettingsModel({
     this.leading,
     this.trailing,
     this.showMenuIcon = false,

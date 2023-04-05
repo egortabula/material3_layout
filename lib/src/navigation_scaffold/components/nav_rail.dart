@@ -6,7 +6,7 @@ import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_con
 import 'theme_switcher_button.dart';
 
 class NavRail extends GetView<NavigationScaffoldController> {
-  final NavigationRailSettingsModel settings;
+  final PrimaryNavigationSettingsModel settings;
   final void Function(int)? onDestinationSelected;
   const NavRail({
     Key? key,
