@@ -27,7 +27,7 @@ class PaneContainerWidget extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: NewSurfaceTheme.getSurfaceColor(surfaceColor, context),
-        borderRadius:  BorderRadius.all(Radius.circular(borderRadius)),
+        borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
       ),
       child: child,
     );
