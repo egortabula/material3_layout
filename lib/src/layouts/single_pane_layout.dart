@@ -13,10 +13,10 @@ class SinglePaneLayout extends Layout with LayoutUtils {
     final layout = Breakpoints.getLayout(context);
     if (layout == LayoutEnum.compact) {
       return Container(
+        width: double.infinity,
+        height: double.infinity,
         margin: layoutMargin(),
-        child: Flexible(
-          child: child,
-        ),
+        child: child,
       );
     }
     return Material(
@@ -26,9 +26,9 @@ class SinglePaneLayout extends Layout with LayoutUtils {
       elevation: 2,
       child: Container(
         margin: layoutMargin(),
-        child: Flexible(
-          child: child,
-        ),
+          width: double.infinity,
+        height: double.infinity,
+        child: child,
       )
     );
   }
