@@ -21,11 +21,10 @@ class NavRail extends GetView<NavigationScaffoldController> {
         children: [
           NavigationRail(
             backgroundColor: ElevationOverlay.applySurfaceTint(
-              controller.theme.value.colorScheme.surface,
-              controller.theme.value.colorScheme.surfaceTint,
+              Get.theme.colorScheme.surface,
+              Get.theme.colorScheme.surfaceTint,
               2,
             ),
-            
             groupAlignment: settings.groupAlignment,
             labelType: settings.labelType,
             leading: _buildLeading(state),

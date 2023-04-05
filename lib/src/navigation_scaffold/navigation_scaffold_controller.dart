@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NavigationScaffoldController extends GetxController {
-  final Rx<ThemeData> theme;
+  final ThemeData theme;
 
   NavigationScaffoldController(this.theme);
 

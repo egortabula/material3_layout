@@ -29,7 +29,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(NavigationScaffoldController(theme.obs));
+    Get.put(NavigationScaffoldController(theme));
     var layout = Breakpoints.getLayout(context);
 
     return Scaffold(
