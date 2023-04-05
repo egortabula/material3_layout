@@ -8,6 +8,7 @@ class PaneContainerWidget extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final double width;
   final double height;
+  final double borderRadius;
   const PaneContainerWidget({
     Key? key,
     required this.child,
@@ -15,6 +16,7 @@ class PaneContainerWidget extends StatelessWidget {
     this.padding = EdgeInsets.zero,
     this.height = double.infinity,
     this.width = double.infinity,
+    this.borderRadius = 12,
   }) : super(key: key);
 
   @override
@@ -25,7 +27,7 @@ class PaneContainerWidget extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: NewSurfaceTheme.getSurfaceColor(surfaceColor, context),
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
+        borderRadius:  BorderRadius.all(Radius.circular(borderRadius)),
       ),
       child: child,
     );
