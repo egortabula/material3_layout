@@ -34,6 +34,19 @@ class PaneContainerWidget extends StatelessWidget {
   /// The border radius for the container. Defaults to 12.
   final double borderRadius;
 
+  /// The [PaneContainerWidget] is a wrapper widget for widgets that are inserted inside the
+  /// [PageLayout]. The container allows you to select the surface background color, container
+  /// dimensions, and border radius.
+  ///
+  /// Example of usage:
+  ///
+  /// ```dart
+  /// PaneContainerWidget(
+  ///   child: YourWidget(),
+  ///   surfaceColor: SurfaceColorEnum.primaryVariant,
+  ///   padding: EdgeInsets.all(16),
+  /// )
+  /// ```
   const PaneContainerWidget({
     Key? key,
     required this.child,

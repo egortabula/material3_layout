@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:material3_layout/src/layouts/enum/fixed_pane_position_enum.dart';
 import 'package:material3_layout/src/layouts/layout.dart';
 import 'package:material3_layout/src/layouts/layout_utils.dart';
@@ -31,9 +30,10 @@ class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Material(
-      color: Get.theme.colorScheme.surface,
-      surfaceTintColor: Get.theme.colorScheme.surfaceTint,
+      color: theme.colorScheme.surface,
+      surfaceTintColor: theme.colorScheme.surfaceTint,
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Padding(

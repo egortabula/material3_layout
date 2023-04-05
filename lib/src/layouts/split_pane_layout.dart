@@ -19,10 +19,11 @@ class SplitPaneLayout extends StatelessWidget with LayoutUtils, Layout {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     // Use a Material widget as the container to apply a shadow and background color.
     return Material(
-      color: Get.theme.colorScheme.surface,
-      surfaceTintColor: Get.theme.colorScheme.surfaceTint,
+      color: theme.colorScheme.surface,
+      surfaceTintColor: theme.colorScheme.surfaceTint,
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Container(
