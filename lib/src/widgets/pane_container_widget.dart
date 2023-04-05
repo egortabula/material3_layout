@@ -6,19 +6,23 @@ class PaneContainerWidget extends StatelessWidget {
   final Widget child;
   final SurfaceColorEnum surfaceColor;
   final EdgeInsetsGeometry padding;
+  final double width;
+  final double height;
   const PaneContainerWidget({
     Key? key,
     required this.child,
     this.surfaceColor = SurfaceColorEnum.surface,
     this.padding = EdgeInsets.zero,
+    this.height = double.infinity,
+    this.width = double.infinity,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: padding,
-      width: double.infinity,
-      height: double.infinity,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: NewSurfaceTheme.getSurfaceColor(surfaceColor, context),
         borderRadius: const BorderRadius.all(Radius.circular(12)),
