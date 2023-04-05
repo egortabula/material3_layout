@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/breakpoints.dart';
 import 'package:material3_layout/src/models/navigation_settings.dart';
-import 'package:material3_layout/src/navigation_scaffold/components/bottom_nav_bar.dart';
 import 'package:material3_layout/src/navigation_scaffold/components/nav_rail.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
+
+import 'components/bottom_nav_bar.dart';
 
 class NavigationScaffold extends GetView<NavigationScaffoldController> {
   final void Function(int)? onDestinationSelected;
@@ -36,15 +37,17 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
       backgroundColor: theme.colorScheme.surface,
       drawerScrimColor: theme.colorScheme.scrim.withOpacity(0.3),
       appBar: _buildAppBar(layout),
-      body: Row(
-        children: [
-          _buildPrimaryNavigation(layout),
-          Flexible(
-            child: Obx(
-              () => navigationSettings.pages[controller.selectedIndex],
+      body: SafeArea(
+        child: Row(
+          children: [
+            _buildPrimaryNavigation(layout),
+            Flexible(
+              child: Obx(
+                () => navigationSettings.pages[controller.selectedIndex],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: _buildBottomNavigationBar(layout),
       drawer: _buildModalDrawer(),
