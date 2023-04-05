@@ -32,7 +32,7 @@ class PageLayout extends StatelessWidget {
     final layout = Breakpoints.getLayout(context);
 
     if (layout == LayoutEnum.compact) {
-      return compactLayout.build(context);
+      return compactLayout;
     }
     if (layout == LayoutEnum.medium) {
       if (GetUtils.isNull(mediumLayout)) {
