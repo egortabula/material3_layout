@@ -12,7 +12,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   final void Function(int)? onDestinationSelected;
   final ThemeData theme;
   final AppBar? appBar;
-
+  
   final NavigationTypeEnum navigationType;
   final NavigationSettings navigationSettings;
 

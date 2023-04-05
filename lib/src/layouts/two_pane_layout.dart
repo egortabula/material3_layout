@@ -8,11 +8,14 @@ class TwoPaneLayout extends Layout with LayoutUtils {
   final Widget fixedPaneChild;
   final Widget flexiblePaneChild;
   final FixedPanePositionEnum fixedPanelPosition;
+  final double verticalPadding;
+
   const TwoPaneLayout({
     Key? key,
     required this.fixedPaneChild,
     required this.flexiblePaneChild,
     this.fixedPanelPosition = FixedPanePositionEnum.left,
+    this.verticalPadding = 0,
   }) : super(key: key);
 
   @override
@@ -23,7 +26,7 @@ class TwoPaneLayout extends Layout with LayoutUtils {
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Padding(
-        padding: layoutMargin(),
+        padding: layoutSpacing(verticalPadding),
         child: Builder(
           builder: (context) {
             if (isFixedPanelPositionLeft) {

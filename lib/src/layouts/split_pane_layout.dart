@@ -6,10 +6,13 @@ import 'package:material3_layout/src/layouts/layout_utils.dart';
 class SplitPaneLayout extends Layout with LayoutUtils {
   final Widget leftChild;
   final Widget rightChild;
+    final double verticalPadding;
+
   const SplitPaneLayout({
     Key? key,
     required this.leftChild,
     required this.rightChild,
+    this.verticalPadding = 0,
   }) : super(key: key);
 
   @override
@@ -20,7 +23,7 @@ class SplitPaneLayout extends Layout with LayoutUtils {
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Container(
-        margin: layoutMargin(),
+        margin: layoutSpacing(verticalPadding),
         child: Row(
           children: [
             Flexible(child: leftChild),

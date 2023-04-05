@@ -6,7 +6,12 @@ import 'package:material3_layout/src/layouts/layout_utils.dart';
 
 class SinglePaneLayout extends Layout with LayoutUtils {
   final Widget child;
-  const SinglePaneLayout(this.child, {Key? key}) : super(key: key);
+  final double verticalPadding;
+  const SinglePaneLayout(
+    this.child, {
+    Key? key,
+    this.verticalPadding = 0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,21 +20,20 @@ class SinglePaneLayout extends Layout with LayoutUtils {
       return Container(
         width: double.infinity,
         height: double.infinity,
-        margin: layoutMargin(),
+        margin: layoutSpacing(verticalPadding),
         child: child,
       );
     }
     return Material(
-      color: Get.theme.colorScheme.surface,
-      surfaceTintColor: Get.theme.colorScheme.surfaceTint,
-      shadowColor: Colors.transparent,
-      elevation: 2,
-      child: Container(
-        margin: layoutMargin(),
+        color: Get.theme.colorScheme.surface,
+        surfaceTintColor: Get.theme.colorScheme.surfaceTint,
+        shadowColor: Colors.transparent,
+        elevation: 2,
+        child: Container(
+          margin: layoutSpacing(verticalPadding),
           width: double.infinity,
-        height: double.infinity,
-        child: child,
-      )
-    );
+          height: double.infinity,
+          child: child,
+        ));
   }
 }
