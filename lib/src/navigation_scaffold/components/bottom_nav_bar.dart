@@ -14,7 +14,7 @@ import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_con
 /// with the index of the selected destination.
 class BottomNavBar extends GetView<NavigationScaffoldController> {
   /// The primary navigation settings for the navigation bar.
-  final PrimaryNavigationSettingsModel settings;
+  final RailAndBottomSettings settings;
 
   /// A callback function that is called when a destination is selected.
   final void Function(int)? onDestinationSelected;

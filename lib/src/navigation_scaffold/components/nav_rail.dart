@@ -8,7 +8,7 @@ import 'theme_switcher_button.dart';
 /// Widget that builds the navigation rail of the NavigationScaffold.
 class NavRail extends GetView<NavigationScaffoldController> {
   /// The primary navigation settings for the navigation rail.
-  final PrimaryNavigationSettingsModel settings;
+  final RailAndBottomSettings settings;
 
   /// A callback function that is called when a destination is selected.
   final void Function(int)? onDestinationSelected;

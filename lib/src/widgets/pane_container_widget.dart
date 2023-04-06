@@ -5,16 +5,6 @@ import 'package:material3_layout/src/theme/surface_color_enum.dart';
 /// The [PaneContainerWidget] is a wrapper widget for widgets that are inserted inside the
 /// [PageLayout]. The container allows you to select the surface background color, container
 /// dimensions, and border radius.
-///
-/// Example of usage:
-///
-/// ```dart
-/// PaneContainerWidget(
-///   child: YourWidget(),
-///   surfaceColor: SurfaceColorEnum.primaryVariant,
-///   padding: EdgeInsets.all(16),
-/// )
-/// ```
 class PaneContainerWidget extends StatelessWidget {
   /// The child widget to be wrapped with the container.
   final Widget child;
@@ -59,15 +49,17 @@ class PaneContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: padding,
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        color: NewSurfaceTheme.getSurfaceColor(surfaceColor, context),
+      child: Material(
         borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+        color: NewSurfaceTheme.getSurfaceColor(surfaceColor, context),
+        child: SizedBox(
+          width: width,
+          height: height,
+          child: child,
+        ),
       ),
-      child: child,
     );
   }
 }

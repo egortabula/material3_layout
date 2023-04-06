@@ -8,11 +8,12 @@ import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_con
 /// A custom navigation drawer for the Material3 layout.
 class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
   /// The primary navigation settings for the modal drawer.
-  final NavigationDrawerSettingsModel settings;
+  final DrawerSettings settings;
 
   /// A callback function that is called when a destination is selected.
   final void Function(int)? onDestinationSelected;
 
+  /// A custom navigation drawer for the Material3 layout.
   const CustomNavigationDrawer({
     Key? key,
     required this.settings,

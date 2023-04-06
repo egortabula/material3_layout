@@ -3,7 +3,7 @@ import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/models/navigation_settings.dart';
 
 /// The settings for the primary navigation rail in the [NavigationScaffold].
-class PrimaryNavigationSettingsModel extends NavigationSettings<DestinationModel> {
+class RailAndBottomSettings extends NavigationSettings<DestinationModel> {
   /// An optional widget to display as the leading widget in the navigation rail.
   final Widget? leading;
 
@@ -22,7 +22,7 @@ class PrimaryNavigationSettingsModel extends NavigationSettings<DestinationModel
   /// Determines whether to add a theme switcher button as the trailing widget in the navigation rail.
   final bool addThemeSwitcherTrailingIcon;
 
-  /// Creates a new [PrimaryNavigationSettingsModel].
+  /// Creates a new [RailAndBottomSettings].
   ///
   /// [leading] - An optional widget to display as the leading widget in the navigation rail.
   ///
@@ -39,7 +39,7 @@ class PrimaryNavigationSettingsModel extends NavigationSettings<DestinationModel
   /// [destinations] - The list of [DestinationModel] objects to display in the navigation rail.
   ///
   /// [pages] - The list of [Widget] objects that correspond to each [DestinationModel] in the [destinations] list.
-  PrimaryNavigationSettingsModel({
+  RailAndBottomSettings({
     this.leading,
     this.trailing,
     this.showMenuIcon = false,

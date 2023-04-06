@@ -109,13 +109,13 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     }
     if (navigationType == NavigationTypeEnum.drawer) {
       return CustomNavigationDrawer(
-        settings: navigationSettings as NavigationDrawerSettingsModel,
+        settings: navigationSettings as DrawerSettings,
         onDestinationSelected: onDestinationSelected,
       );
     }
 
     return NavRail(
-      settings: navigationSettings as PrimaryNavigationSettingsModel,
+      settings: navigationSettings as RailAndBottomSettings,
       onDestinationSelected: onDestinationSelected,
     );
   }
@@ -127,7 +127,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
       return null;
     }
     return BottomNavBar(
-      settings: navigationSettings as PrimaryNavigationSettingsModel,
+      settings: navigationSettings as RailAndBottomSettings,
       onDestinationSelected: onDestinationSelected,
     );
   }
@@ -136,9 +136,12 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     if (navigationType == NavigationTypeEnum.railAndBottomNavBar) {
       return null;
     }
+    if (navigationType == NavigationTypeEnum.drawer) {
+      return null;
+    }
 
     return CustomNavigationDrawer(
-      settings: navigationSettings as NavigationDrawerSettingsModel,
+      settings: navigationSettings as DrawerSettings,
       onDestinationSelected: onDestinationSelected,
     );
   }
