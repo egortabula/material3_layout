@@ -15,7 +15,7 @@ class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
   final Widget flexiblePaneChild;
 
   /// The position of the fixed pane in the layout. Defaults to [FixedPanePositionEnum.left].
-  final FixedPanePositionEnum fixedPanelPosition;
+  final FixedPanePositionEnum fixedPanePosition;
 
   /// The amount of vertical padding to apply around the layout.
   final double verticalPadding;
@@ -24,7 +24,7 @@ class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
     super.key,
     required this.fixedPaneChild,
     required this.flexiblePaneChild,
-    this.fixedPanelPosition = FixedPanePositionEnum.left,
+    this.fixedPanePosition = FixedPanePositionEnum.left,
     this.verticalPadding = 0,
   });
 
@@ -40,7 +40,7 @@ class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
         padding: layoutSpacing(verticalPadding),
         child: Builder(
           builder: (context) {
-            if (isFixedPanelPositionLeft) {
+            if (isFixedPanePositionLeft) {
               return Row(
                 children: [
                   SizedBox(
@@ -72,7 +72,7 @@ class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
   }
 
   /// Returns a boolean value indicating whether the fixed panel position is left.
-  bool get isFixedPanelPositionLeft {
-    return fixedPanelPosition == FixedPanePositionEnum.left ? true : false;
+  bool get isFixedPanePositionLeft {
+    return fixedPanePosition == FixedPanePositionEnum.left ? true : false;
   }
 }
