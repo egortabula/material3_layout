@@ -18,13 +18,13 @@ class PageLayout extends StatelessWidget {
   /// The layout to use when the screen size is extended.
   /// 
   /// Typically `TwoPaneLayout`. but it can be `SinglePaneLayout` or `SplitPaneLayout``
-  final Layout? extendedLayout;
+  final Layout? expandedLayout;
 
   const PageLayout({
     Key? key,
     required this.compactLayout,
     required this.mediumLayout,
-    required this.extendedLayout,
+    required this.expandedLayout,
   }) : super(key: key);
 
   @override
@@ -41,10 +41,10 @@ class PageLayout extends StatelessWidget {
       return mediumLayout!;
     }
     if (layout == LayoutEnum.expanded) {
-      if (GetUtils.isNull(extendedLayout)) {
+      if (GetUtils.isNull(expandedLayout)) {
         return mediumLayout ?? const SizedBox.shrink();
       }
-      return extendedLayout!;
+      return expandedLayout!;
     }
     throw Exception("Undefined breakpoint");
   }
