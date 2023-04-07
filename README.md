@@ -1,4 +1,7 @@
-- [About](#about)
+![](https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fld95v1q8-3p_Designing-across-window-classes_2x.png?alt=media&token=ed808875-5318-41dc-89c5-c041ccb877fa)
+
+I created this package to simplify the development of adaptive applications for compact, medium and large screens. This package is fully built on the [Material Design 3 guideline](https://m3.material.io/foundations/layout/understanding-layout/overview).
+
 - [Features](#features)
 - [Instalation](#instalation)
 - [Usage](#usage)
@@ -36,11 +39,6 @@
     - [Comparison](#comparison)
 - [Conclusion](#conclusion)
 
-# About
-![](https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fld95v1q8-3p_Designing-across-window-classes_2x.png?alt=media&token=ed808875-5318-41dc-89c5-c041ccb877fa)
-
-I created this package to simplify the development of adaptive applications for compact, medium and large screens. This package is fully built on the [Material Design 3 guideline](https://m3.material.io/foundations/layout/understanding-layout/overview).
-
 # Features
 - 🚦 Automatic switching between primary navigation based on 3 breakpoints (compact/medium/expanded) 📲
 - 🚪 Support Navigation Bar (for mobile), Navigation Rail, Drawer and Modal Drawer 🗄️
@@ -50,7 +48,7 @@ I created this package to simplify the development of adaptive applications for 
 - 🌞 Theme mode switch 🌜
 - 🎓 Simple API 🎓
 
-https://user-images.githubusercontent.com/64892468/230585229-2b1d45e9-8dba-4c88-a32a-96f01c77ed8b.mp4
+![](https://user-images.githubusercontent.com/64892468/230585229-2b1d45e9-8dba-4c88-a32a-96f01c77ed8b.mp4)
 
 # Instalation
 To use this package, add material3_layout as a dependency in your pubspec.yaml file.
