@@ -1,7 +1,19 @@
 name: material3_layout
-description: A new Flutter package project.
+description: This package helps to create adaptive applications following the Material Design 3 guidelines.
 version: 0.0.1
 homepage:
+repository: https://github.com/egortabula/material3_layout
+issue_tracker: https://github.com/egortabula/material3_layout/issues
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+screenshots:
+  - description: 'This screenshot shows the thumbnail of the package'
+    path: assets/material3_layout flutter package Egor Tabula.png
 
 environment:
   sdk: ">=2.19.5 <3.0.0"
