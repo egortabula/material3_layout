@@ -41,8 +41,6 @@
 
 I created this package to simplify the development of adaptive applications for compact, medium and large screens. This package is fully built on the [Material Design 3 guideline](https://m3.material.io/foundations/layout/understanding-layout/overview).
 
-![](https://file.notion.so/f/s/ae922b0f-db71-4aca-b8fa-46b47497892a/Flutter_material_3_adaptive_design_package_material3_layout.mp4?id=0c5f001d-ce78-48e9-b568-a77f9a1db139&table=block&spaceId=990399a8-1934-4642-bbde-dff011840a37&expirationTimestamp=1680945007762&signature=DuRWAOdvlfYjmdFVVZ8syBljU6PPr20Pyi3eljt4sTE&downloadName=Flutter+material+3+adaptive+design+package+material3_layout.mp4)
-
 # Features
 - 🚦 Automatic switching between primary navigation based on 3 breakpoints (compact/medium/expanded) 📲
 - 🚪 Support Navigation Bar (for mobile), Navigation Rail, Drawer and Modal Drawer 🗄️
