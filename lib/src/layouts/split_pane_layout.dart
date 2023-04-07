@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:material3_layout/src/layouts/layout.dart';
 import 'package:material3_layout/src/layouts/layout_utils.dart';
 
