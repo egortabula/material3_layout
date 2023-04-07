@@ -39,7 +39,8 @@ class RailAndBottomSettings extends NavigationSettings<DestinationModel> {
   /// [destinations] - The list of [DestinationModel] objects to display in the navigation rail.
   ///
   /// [pages] - The list of [Widget] objects that correspond to each [DestinationModel] in the [destinations] list.
-  RailAndBottomSettings({
+  RailAndBottomSettings(
+    {
     this.leading,
     this.trailing,
     this.showMenuIcon = false,
@@ -48,27 +49,29 @@ class RailAndBottomSettings extends NavigationSettings<DestinationModel> {
     this.labelType,
     required super.destinations,
     required super.pages,
-    super.type = NavigationTypeEnum.railAndBottomNavBar,
-  })  : assert(
-          destinations.length == pages.length,
-          'Destinations must be the same length as pages',
-        ),
-        assert(
-          showMenuIcon == false || leading == null,
-          'Cannot provide both showMenuIcon and leading properties.',
-        ),
-        assert(
-          !showMenuIcon ||
-              labelType == null ||
-              labelType == NavigationRailLabelType.none,
-          'Cannot provide both showMenuIcon and labelType all or selected',
-        ),
-        assert(
-          !(trailing != null && addThemeSwitcherTrailingIcon),
-          'Cannot provide both "trailing" and "addThemeSwitcherTrailingIcon"',
-        ),
-        assert(
-          addThemeSwitcherTrailingIcon == false || groupAlignment <= 0.0,
-          'Cannot provide bottom group alignment and theme switcher button',
-        );
+    super.type = NavigationTypeEnum.railAndBottomNavBar
+  }) {
+    assert(
+      destinations.length == pages.length,
+      'Destinations must be the same length as pages',
+    );
+    assert(
+      showMenuIcon == false || leading == null,
+      'Cannot provide both showMenuIcon and leading properties.',
+    );
+    assert(
+      !showMenuIcon ||
+          labelType == null ||
+          labelType == NavigationRailLabelType.none,
+      'Cannot provide both showMenuIcon and labelType all or selected',
+    );
+    assert(
+      !(trailing != null && addThemeSwitcherTrailingIcon),
+      'Cannot provide both "trailing" and "addThemeSwitcherTrailingIcon"',
+    );
+    assert(
+      addThemeSwitcherTrailingIcon == false || groupAlignment <= 0.0,
+      'Cannot provide bottom group alignment and theme switcher button',
+    );
+  }
 }

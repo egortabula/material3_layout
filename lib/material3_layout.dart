@@ -13,3 +13,4 @@ export './src/layouts/two_pane_layout.dart';
 export './src/theme/surface_color_enum.dart';
 export './src/widgets/pane_container_widget.dart';
 export './src/layouts/layout.dart';
+export './src/layouts/enum/fixed_pane_position_enum.dart';
