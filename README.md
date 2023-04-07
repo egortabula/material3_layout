@@ -52,6 +52,8 @@ I created this package to simplify the development of adaptive applications for 
 - 🌞 Theme mode switch 🌜
 - 🎓 Simple API 🎓
 
+https://user-images.githubusercontent.com/64892468/230583065-6cf7e5d7-5129-42a5-b22f-15402c883d6b.mp4
+
 # Instalation
 To use this package, add material3_layout as a dependency in your pubspec.yaml file.
 
