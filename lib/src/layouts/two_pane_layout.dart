@@ -37,7 +37,7 @@ class TwoPaneLayout extends StatelessWidget with LayoutUtils, Layout {
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Padding(
-        padding: layoutSpacing(verticalPadding),
+        padding: layoutSpacing(verticalPadding,context),
         child: Builder(
           builder: (context) {
             if (isFixedPanePositionLeft) {

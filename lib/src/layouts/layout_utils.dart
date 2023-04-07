@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:material3_layout/src/breakpoints.dart';
 
 class LayoutUtils {
@@ -18,18 +17,18 @@ class LayoutUtils {
   /// Returns the EdgeInsetsGeometry for the given vertical and horizontal padding based on the current breakpoint.
   ///
   /// Throws an UnimplementedError if the current breakpoint is not supported.
-  EdgeInsetsGeometry layoutSpacing(double verticalPadding) {
-    if (Breakpoints.isCompact(Get.context!)) {
+  EdgeInsetsGeometry layoutSpacing(double verticalPadding, BuildContext context) {
+    if (Breakpoints.isCompact(context)) {
       return EdgeInsets.symmetric(
         horizontal: compactLayoutMargin,
         vertical: verticalPadding,
       );
-    } else if (Breakpoints.isMedium(Get.context!)) {
+    } else if (Breakpoints.isMedium(context)) {
       return EdgeInsets.symmetric(
         horizontal: mediumLayoutMargin,
         vertical: verticalPadding,
       );
-    } else if (Breakpoints.isExtended(Get.context!)) {
+    } else if (Breakpoints.isExtended(context)) {
       return EdgeInsets.symmetric(
         horizontal: exdendedLayoutMargin,
         vertical: verticalPadding,

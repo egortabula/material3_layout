@@ -25,7 +25,7 @@ class SinglePaneLayout extends StatelessWidget with LayoutUtils, Layout {
       return Container(
         width: double.infinity,
         height: double.infinity,
-        margin: layoutSpacing(verticalPadding),
+        margin: layoutSpacing(verticalPadding, context),
         child: child,
       );
     }
@@ -35,7 +35,7 @@ class SinglePaneLayout extends StatelessWidget with LayoutUtils, Layout {
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Container(
-        margin: layoutSpacing(verticalPadding),
+        margin: layoutSpacing(verticalPadding, context),
         width: double.infinity,
         height: double.infinity,
         child: child,

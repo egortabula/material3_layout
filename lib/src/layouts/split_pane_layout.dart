@@ -27,7 +27,7 @@ class SplitPaneLayout extends StatelessWidget with LayoutUtils, Layout {
       shadowColor: Colors.transparent,
       elevation: 2,
       child: Container(
-        margin: layoutSpacing(verticalPadding),
+        margin: layoutSpacing(verticalPadding, context),
         child: Row(
           children: [
             // Use Flexible to allow the left child to take up as much space as possible.
