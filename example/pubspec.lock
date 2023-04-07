@@ -110,9 +110,10 @@ packages:
   material3_layout:
     dependency: "direct main"
     description:
-      path: "../material3_layout"
-      relative: true
-    source: path
+      name: material3_layout
+      sha256: "21b4eae699dd682d4d0b752df2af2be3961bc1325488fa051ee94af8969522fb"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   material_color_utilities:
     dependency: transitive
