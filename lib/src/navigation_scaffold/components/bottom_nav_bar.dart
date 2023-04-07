@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
-
 /// A widget that displays a navigation bar with customizable destinations
 /// based on the provided [settings] in a [NavigationScaffold].
 ///

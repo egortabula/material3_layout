@@ -8,7 +8,6 @@ import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_con
 
 import 'components/bottom_nav_bar.dart';
 
-
 /// A wrapper around a regular [Scaffold] widget, providing adaptive Material Design 3 layout.
 ///
 /// [NavigationScaffold] allows you to choose a primary navigation type for your app, which can be either rail navigation along with a navigation bar for small screens, modal drawer, or a standard drawer. The primary navigation displayed depends on the screen size.
@@ -29,13 +28,13 @@ import 'components/bottom_nav_bar.dart';
 /// )
 /// ```
 class NavigationScaffold extends GetView<NavigationScaffoldController> {
-    /// A callback function that is called when a destination is selected in the primary
+  /// A callback function that is called when a destination is selected in the primary
   /// navigation rail or bottom navigation bar or modal drawer.
   final void Function(int)? onDestinationSelected;
 
-   /// The theme to use for the app.
-   /// 
-   /// Just pass `Theme.of(context)`
+  /// The theme to use for the app.
+  ///
+  /// Just pass `Theme.of(context)`
   final ThemeData theme;
 
   /// An optional app bar to display at the top of the screen.
@@ -46,7 +45,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
   /// The settings for the navigation rail, bottom navigation bar, and other UI components.
   /// If you want use navigation rail in medium and extended screen and navigation bar in compact screens pass the `PrimaryNavigationSettingsModel`.
-  /// 
+  ///
   /// If you want use modal drawer, as primary navigation in your app, than pass `NavigationDrawerSettingsModel`
   final NavigationSettings navigationSettings;
 
@@ -72,8 +71,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
           navigationSettings.type == navigationType,
           'Wrong navigationType. NavigationType must be the same as in navigationSettings',
         );
-  
-  
+
   @override
   Widget build(BuildContext context) {
     Get.put(NavigationScaffoldController(theme));

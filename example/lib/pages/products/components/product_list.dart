@@ -16,7 +16,7 @@ class ProductList extends GetView<ProductPageController> {
         final product = controller.products[index];
         return ListTile(
           dense: false,
-          leading:  CircleAvatar(
+          leading: CircleAvatar(
             backgroundImage: AssetImage(product.photoUrl),
           ),
           title: Text(product.title),

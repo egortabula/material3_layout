@@ -17,7 +17,8 @@ class LayoutUtils {
   /// Returns the EdgeInsetsGeometry for the given vertical and horizontal padding based on the current breakpoint.
   ///
   /// Throws an UnimplementedError if the current breakpoint is not supported.
-  EdgeInsetsGeometry layoutSpacing(double verticalPadding, BuildContext context) {
+  EdgeInsetsGeometry layoutSpacing(
+      double verticalPadding, BuildContext context) {
     if (Breakpoints.isCompact(context)) {
       return EdgeInsets.symmetric(
         horizontal: compactLayoutMargin,

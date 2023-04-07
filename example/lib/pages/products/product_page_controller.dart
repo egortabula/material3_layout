@@ -17,7 +17,7 @@ class ProductPageController extends GetxController {
       title: 'Пицца Маргарита',
       description:
           'томатный соус, моцарелла, пармезан, базилик, оливковое масло',
-          photoUrl: 'assets/margarita.jpeg',
+      photoUrl: 'assets/margarita.jpeg',
     ),
     ProductModel(
         title: 'Пицца Фунги',

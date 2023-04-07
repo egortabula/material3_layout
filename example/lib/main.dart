@@ -91,8 +91,7 @@ class ScreenWidget extends StatelessWidget {
             child: Obx(() {
               final controller = Get.find<ProductPageController>();
               return Center(
-                child: Image.asset(controller.selectedProduct.photoUrl)
-              );
+                  child: Image.asset(controller.selectedProduct.photoUrl));
             }),
           ),
         ),

@@ -40,17 +40,15 @@ class RailAndBottomSettings extends NavigationSettings<DestinationModel> {
   ///
   /// [pages] - The list of [Widget] objects that correspond to each [DestinationModel] in the [destinations] list.
   RailAndBottomSettings(
-    {
-    this.leading,
-    this.trailing,
-    this.showMenuIcon = false,
-    this.groupAlignment = 0.0,
-    this.addThemeSwitcherTrailingIcon = false,
-    this.labelType,
-    required super.destinations,
-    required super.pages,
-    super.type = NavigationTypeEnum.railAndBottomNavBar
-  }) {
+      {this.leading,
+      this.trailing,
+      this.showMenuIcon = false,
+      this.groupAlignment = 0.0,
+      this.addThemeSwitcherTrailingIcon = false,
+      this.labelType,
+      required super.destinations,
+      required super.pages,
+      super.type = NavigationTypeEnum.railAndBottomNavBar}) {
     assert(
       destinations.length == pages.length,
       'Destinations must be the same length as pages',

@@ -4,7 +4,6 @@ import 'package:get/route_manager.dart';
 import 'package:material3_layout/material3_layout.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
-
 /// A custom navigation drawer for the Material3 layout.
 class CustomNavigationDrawer extends GetView<NavigationScaffoldController> {
   /// The primary navigation settings for the modal drawer.

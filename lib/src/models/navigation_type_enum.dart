@@ -12,4 +12,3 @@ enum NavigationTypeEnum {
   modalDrawer,
   drawer,
 }
-
