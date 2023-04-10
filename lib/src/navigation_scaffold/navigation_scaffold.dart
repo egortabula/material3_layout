@@ -6,7 +6,6 @@ import 'package:material3_layout/src/models/navigation_settings.dart';
 import 'package:material3_layout/src/navigation_scaffold/components/nav_rail.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
-import '../theme/new_surface_theme.dart';
 import 'components/bottom_nav_bar.dart';
 
 /// A wrapper around a regular [Scaffold] widget, providing adaptive Material Design 3 layout.
@@ -47,7 +46,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
   /// The settings for the navigation rail, bottom navigation bar, and other UI components.
   /// If you want use navigation rail in medium and extended screen and navigation bar in compact screens pass the `PrimaryNavigationSettingsModel`.
   ///
-  /// If you want use modal drawer, as primary navigation in your app, than pass `NavigationDrawerSettingsModel`
+  /// If you want use modal drawer, as primary navigation in your app, than pass `RailAndBottomSettings`
   final NavigationSettings navigationSettings;
 
   /// Creates a new [NavigationScaffold] widget.
