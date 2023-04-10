@@ -3,7 +3,7 @@ import 'package:material3_layout/src/breakpoints.dart';
 
 class LayoutUtils {
   /// Horizontal margin for compact layout
-  double get compactLayoutMargin => 16.0;
+  double get compactLayoutMargin => 0.0;
 
   /// Horizontal margin for medium layout
   double get mediumLayoutMargin => 24.0;
