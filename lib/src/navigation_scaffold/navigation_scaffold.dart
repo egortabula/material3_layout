@@ -6,6 +6,7 @@ import 'package:material3_layout/src/models/navigation_settings.dart';
 import 'package:material3_layout/src/navigation_scaffold/components/nav_rail.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
 
+import '../theme/new_surface_theme.dart';
 import 'components/bottom_nav_bar.dart';
 
 /// A wrapper around a regular [Scaffold] widget, providing adaptive Material Design 3 layout.
@@ -78,7 +79,11 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     var layout = Breakpoints.getLayout(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.surface,
+      // backgroundColor: theme.colorScheme.surface,
+      backgroundColor: NewSurfaceTheme.getSurfaceColor(
+        SurfaceColorEnum.surfaceContainer,
+        context,
+      ),
       drawerScrimColor: theme.colorScheme.scrim.withOpacity(0.3),
       appBar: _buildAppBar(layout),
       body: SafeArea(
