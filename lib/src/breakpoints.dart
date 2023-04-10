@@ -38,7 +38,7 @@ class Breakpoints {
   ///
   /// Returns `true` if the screen width is greater than 840 pixels, `false` otherwise.
   static bool isExtended(BuildContext context) {
-    return MediaQuery.of(context).size.width > 840 ? true : false;
+    return MediaQuery.of(context).size.width >= 840 ? true : false;
   }
 }
 
