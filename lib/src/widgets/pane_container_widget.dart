@@ -21,8 +21,11 @@ class PaneContainerWidget extends StatelessWidget {
   /// The height of the container. Defaults to [double.infinity].
   final double height;
 
-  /// The border radius for the container. Defaults to 12.
-  final double borderRadius;
+  /// The top border radius for the container. Defaults to 12.
+  final double topBorderRadius;
+
+  /// The bottom border radius for the container. Defaults to 12.
+  final double bottomBorderRadius;
 
   /// The [PaneContainerWidget] is a wrapper widget for widgets that are inserted inside the
   /// [PageLayout]. The container allows you to select the surface background color, container
@@ -44,7 +47,8 @@ class PaneContainerWidget extends StatelessWidget {
     this.padding = EdgeInsets.zero,
     this.height = double.infinity,
     this.width = double.infinity,
-    this.borderRadius = 12,
+    this.topBorderRadius = 12,
+    this.bottomBorderRadius = 12,
   }) : super(key: key);
 
   @override
@@ -52,7 +56,10 @@ class PaneContainerWidget extends StatelessWidget {
     return Padding(
       padding: padding,
       child: Material(
-        borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(topBorderRadius),
+          bottom: Radius.circular(bottomBorderRadius),
+        ),
         color: NewSurfaceTheme.getSurfaceColor(surfaceColor, context),
         child: SizedBox(
           width: width,
