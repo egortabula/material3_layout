@@ -80,10 +80,6 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
 
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      // backgroundColor: NewSurfaceTheme.getSurfaceColor(
-      //   SurfaceColorEnum.surface,
-      //   context,
-      // ),
       drawerScrimColor: theme.colorScheme.scrim.withOpacity(0.3),
       appBar: _buildAppBar(layout),
       body: SafeArea(
