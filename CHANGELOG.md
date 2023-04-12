@@ -16,3 +16,7 @@
 * Fix large breakpoint issue
 * Separate top and bottom border radius in PaneContainerWidget
 * Change NavigationScaffold background color to new surface Material color
+
+## 0.0.5
+
+*  Fix NavigationScaffold background color on compact layout
