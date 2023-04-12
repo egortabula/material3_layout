@@ -5,6 +5,7 @@ import 'package:material3_layout/src/breakpoints.dart';
 import 'package:material3_layout/src/models/navigation_settings.dart';
 import 'package:material3_layout/src/navigation_scaffold/components/nav_rail.dart';
 import 'package:material3_layout/src/navigation_scaffold/navigation_scaffold_controller.dart';
+import 'package:material3_layout/src/theme/new_surface_theme.dart';
 
 import 'components/bottom_nav_bar.dart';
 
@@ -78,7 +79,7 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     var layout = Breakpoints.getLayout(context);
 
     return Scaffold(
-      backgroundColor: theme.colorScheme.surface,
+      backgroundColor: NewSurfaceTheme.getSurfaceColor(SurfaceColorEnum.surface, context),
       drawerScrimColor: theme.colorScheme.scrim.withOpacity(0.3),
       appBar: _buildAppBar(layout),
       body: SafeArea(
