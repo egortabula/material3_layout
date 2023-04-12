@@ -1,6 +1,6 @@
 name: material3_layout
 description: This package helps to create adaptive applications following the Material Design 3 guidelines.
-version: 0.0.5
+version: 0.0.6
 homepage:
 repository: https://github.com/egortabula/material3_layout
 issue_tracker: https://github.com/egortabula/material3_layout/issues

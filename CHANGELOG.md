@@ -20,3 +20,7 @@
 ## 0.0.5
 
 *  Fix NavigationScaffold background color on compact layout
+
+## 0.0.6
+
+* Switch to original surface color
