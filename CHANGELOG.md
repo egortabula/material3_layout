@@ -24,3 +24,4 @@
 ## 0.0.6
 
 * Switch to original surface color
+* Fix surfaceContainerLowest color issue when switching theme mode
