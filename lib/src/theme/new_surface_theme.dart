@@ -17,15 +17,9 @@ class NewSurfaceTheme {
   /// the current theme.
   static Color getSurfaceColor(
       SurfaceColorEnum selectedColor, BuildContext context) {
-    final surface = Theme.of(context).colorScheme.surface;
     switch (selectedColor) {
       case SurfaceColorEnum.surface:
-        return Color.fromRGBO(
-          (surface.red * 0.97).round(),
-          (surface.green * 0.97).round(),
-          (surface.blue * 0.97).round(),
-          0.97,
-        );
+        return Theme.of(context).colorScheme.surface;
       case SurfaceColorEnum.surfaceContainerLowest:
         return Get.isDarkMode ? Colors.black : Colors.white;
       case SurfaceColorEnum.surfaceContainerLow:

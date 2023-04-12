@@ -79,7 +79,8 @@ class NavigationScaffold extends GetView<NavigationScaffoldController> {
     var layout = Breakpoints.getLayout(context);
 
     return Scaffold(
-      backgroundColor: NewSurfaceTheme.getSurfaceColor(SurfaceColorEnum.surface, context),
+      backgroundColor:
+          NewSurfaceTheme.getSurfaceColor(SurfaceColorEnum.surface, context),
       drawerScrimColor: theme.colorScheme.scrim.withOpacity(0.3),
       appBar: _buildAppBar(layout),
       body: SafeArea(
