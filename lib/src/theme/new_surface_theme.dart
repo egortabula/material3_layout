@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material3_layout/material3_layout.dart';
-import 'package:get/get.dart';
 
 /// Provides methods for getting the appropriate surface color based on the selected
 /// [SurfaceColorEnum] and the current [Theme] in [BuildContext].
@@ -21,7 +20,9 @@ class NewSurfaceTheme {
       case SurfaceColorEnum.surface:
         return Theme.of(context).colorScheme.surface;
       case SurfaceColorEnum.surfaceContainerLowest:
-        return Get.isDarkMode ? Colors.black : Colors.white;
+        return Theme.of(context).brightness == Brightness.dark
+            ? Colors.black
+            : Colors.white;
       case SurfaceColorEnum.surfaceContainerLow:
         return ElevationOverlay.applySurfaceTint(
           Theme.of(context).colorScheme.surface,
