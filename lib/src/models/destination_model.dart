@@ -6,10 +6,10 @@ class DestinationModel {
   final String label;
 
   /// The icon to be displayed for this destination.
-  final Icon? icon;
+  final Widget? icon;
 
   /// The icon to be displayed for this destination when it is selected.
-  final Icon? selectedIcon;
+  final Widget? selectedIcon;
 
   /// The tooltip to be displayed for this destination.
   final String? tooltip;
