@@ -25,3 +25,7 @@
 
 * Switch to original surface color
 * Fix surfaceContainerLowest color issue when switching theme mode
+
+## 0.0.7
+
+* update icon and selected icon parameters in DestinationModel to Widget type
